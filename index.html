@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadenas · Generación de Adoradores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <p class="kicker">Generación de Adoradores</p>
+    <h1>Cadenas de alabanza</h1>
+  </header>
+
+  <main>
+    <section id="biblioteca" class="panel activo">
+      <h2>Biblioteca</h2>
+      <div class="chips" id="chips"></div>
+      <input id="buscar" type="search" placeholder="Buscar canción o letra">
+      <div id="lista" class="lista"></div>
+      <button id="btnNueva" class="principal">Agregar canción</button>
+    </section>
+
+    <section id="cadena" class="panel">
+      <h2>Mi cadena <span id="cuenta"></span></h2>
+      <input id="nombreCadena" class="nombre" maxlength="60" placeholder="Nombre de la cadena (ej. Culto general)">
+
+      <div class="herram">
+        <span>Agregar:</span>
+        <button data-nuevo="e:Júbilo">Júbilo</button>
+        <button data-nuevo="e:Alabanzas">Alabanzas</button>
+        <button data-nuevo="e:Coritos">Coritos</button>
+        <button data-nuevo="e:Adoración">Adoración</button>
+        <button data-nuevo="e:Himnos">Himnos</button>
+        <button data-nuevo="e:Ofrenda">Ofrenda</button>
+        <button data-nuevo="i:">Intro</button>
+        <button data-nuevo="p:">Puente</button>
+        <button data-nuevo="s:">Solo</button>
+        <select id="selRitmo" aria-label="Ritmo">
+          <option>Marcha</option><option>Disco</option><option>Rock</option><option>Balada</option>
+        </select>
+        <button id="btnRitmo">Cambio de ritmo</button>
+      </div>
+
+      <div id="zona" class="zona"></div>
+      <div class="acciones">
+        <button id="btnCopiar">Copiar</button>
+        <button id="btnTxt">Descargar TXT</button>
+        <button id="btnPdf">Guardar PDF</button>
+        <button id="btnLimpiar" class="suave">Vaciar</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="barra">
+    <button data-ver="biblioteca" class="activo">Biblioteca</button>
+    <button data-ver="cadena">Mi cadena <b id="cuenta2"></b></button>
+  </nav>
+
+  <dialog id="dlg">
+    <form id="form" method="dialog">
+      <h2>Agregar canción</h2>
+      <label>Título <input name="titulo" required maxlength="80"></label>
+      <label>Sección
+        <select name="seccion" required>
+          <option>Júbilo</option>
+          <option>Alabanzas</option>
+          <option>Coritos</option>
+          <option>Adoración</option>
+          <option>Himnos</option>
+        </select>
+      </label>
+      <label>Letra
+        <textarea name="letra" rows="9" required placeholder="CORO: /x2/&#10;...&#10;&#10;ESTROFA 1:&#10;..."></textarea>
+      </label>
+      <label>Tu nombre <input name="autor" maxlength="40" placeholder="Para saber quién la subió"></label>
+      <div class="fila">
+        <button type="button" id="btnCancelar" class="suave">Cancelar</button>
+        <button type="submit" class="principal">Guardar canción</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="aviso" role="status"></div>
+  <div id="impresion"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
