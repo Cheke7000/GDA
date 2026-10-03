@@ -1,0 +1,26 @@
+{
+  "name": "Cadenas · Generación de Adoradores",
+  "short_name": "Cadenas GDA",
+  "description": "Biblioteca compartida y cadenas de alabanza",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1d2b53",
+  "theme_color": "#1d2b53",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
